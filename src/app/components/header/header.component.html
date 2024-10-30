@@ -1,0 +1,49 @@
+<header>
+  <nav class="flex justify-evenly px-1 my-2 py-2 space-x-1 ">
+    <!-- toggle mobile menu -->
+    <button (click)="toggleMobileMenu()" class="md:hidden">
+      <img src="../../../assets/nav/icon-menu.svg" alt="Menu Icon">
+    </button>
+    
+    <p class="font-bold">CHUBB</p>
+    <input type="text" placeholder="Search.." class="w-28 h-6">
+    
+    <!-- Mobile Menu -->
+    <div
+      *ngIf="mobileMenuOpen"
+      class="z-20 bg-white w-36 h-screen absolute top-0 left-0 m-0 text-black"
+    >
+      <button (click)="closeMobileMenu()" class="font-bold text-xl m-4">&#9747;</button>
+      <ul class="m-5 font-semibold space-y-2">
+        <li>Home</li>
+        <li>Pages</li>
+        <li>Insurance</li>
+        <li>Blog</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+    
+    <!-- Desktop Menu -->
+    <div class="hidden md:block">
+      <ul class="flex space-x-4">
+        <li><a href="#" class="hover:text-teal-700 font-medium">Home</a></li>
+        <li><a href="#" class="hover:text-teal-700 font-medium">Pages</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-teal-700 font-medium inline-flex items-center">
+            Insurance
+            <span class="ml-1">▼</span>
+          </a>
+          <ul class="hidden absolute group-hover:block bg-white text-gray-800 shadow-lg mt-1 rounded-md p-2 w-32 space-y-2">
+            <li class="block px-2 py-1 hover:bg-gray-100">Car</li>
+            <li class="block px-2 py-1 hover:bg-gray-100">Vehicle</li>
+            <li class="block px-2 py-1 hover:bg-gray-100">Bussiness</li>
+            <li class="block px-2 py-1 hover:bg-gray-100">Health</li>
+          </ul>
+        </li>
+        <li><a href="#" class="hover:text-teal-700 font-medium">Contact Us</a></li>
+      </ul>
+    </div>  
+    <p><span></span>+(91)1234567899</p>
+    <button class="relative bg-teal-600 p-1 px-4 rounded-md text-white">Get a Quote</button>
+  </nav>
+</header>
